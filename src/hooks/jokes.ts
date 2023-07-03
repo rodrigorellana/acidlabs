@@ -33,7 +33,6 @@ const useJokes = () => {
     return {
       id: joke.id,
       title: joke.title || joke.Title || joke.query,
-      // views: (joke.views ? joke.views : joke.Views) ,
       views: joke.views,
       body: joke.body || joke.Body,
       author: joke.author || joke.Author,
@@ -96,7 +95,6 @@ const useJokes = () => {
     } catch (err: any) {
       setLoading(false)
       return false;
-      // return manageError(err);
     }
   };
 
