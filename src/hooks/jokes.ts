@@ -85,15 +85,17 @@ const useJokes = () => {
     }
   };
 
-  const getJoke = async (id: string) => {
+  const getJoke = async (id: string) : Promise<boolean> => {
     try {
       setLoading(true)
       const response = await axios.get(`${URL}/${id}`);
       const data = await response.data as IJoke
       setJoke(sanitizeJoke(data));
       setLoading(false)
+      return true;
     } catch (err: any) {
       setLoading(false)
+      return false;
       // return manageError(err);
     }
   };

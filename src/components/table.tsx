@@ -72,19 +72,14 @@ const JokesTable = () => {
             <Tbody>
               {
                 isLoading ? (
-                  <Tr>
-                    <Td>
-                      <AbsoluteCenter >
-                        <CircularProgress isIndeterminate />
-                      </AbsoluteCenter>
-                    </Td>
-                  </Tr>
-
+                  <AbsoluteCenter >
+                    <CircularProgress isIndeterminate />
+                  </AbsoluteCenter>
                 ) : (
                   data.map((row) => (
                     <Tr key={row.id}>
                       <Td whiteSpace='break-spaces'>
-                        <Link style={{textDecoration:'underline'}} to={`/joke/${row.id}`}>{row.title || '<empty>'}</Link>
+                        <Link style={{ textDecoration: 'underline' }} to={`/joke/${row.id}`}>{row.title || '<empty>'}</Link>
                       </Td>
                       <Td>{row.author}</Td>
                       <Td>
